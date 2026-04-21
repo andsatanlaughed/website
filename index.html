@@ -4,56 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="And Satan Laughed! While God Loved!">
-  <title>And Satan Laughed! While God Loved!</title>
-  <link rel="stylesheet" href="style.css">
+  <title>...And Satan Laughed! While God Loved!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#a8161b',
+              dark: '#1a1a1a',
+              cream: '#faf7f2',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <a href="#" class="corner-logo" aria-label="DRB">
-    <img src="images/drb.JPG" alt="DRB logo">
+<body class="font-sans bg-brand-cream text-brand-dark antialiased">
+
+  <!-- DRB corner logo -->
+  <a href="#" class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 block w-14 h-14 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-white shadow-lg hover:scale-105 transition-transform" aria-label="DRB">
+    <img src="images/drb.JPG" alt="DRB" class="w-full h-full object-cover">
   </a>
 
-  <header class="banner">
-    <img src="images/andsatanlaughedwhilegodloved.JPG" alt="And Satan Laughed! While God Loved!">
+  <!-- Banner -->
+  <header class="bg-white pt-16 pb-10 sm:pt-12 sm:pb-14 px-6 border-b border-neutral-200">
+    <div class="max-w-4xl mx-auto">
+      <img src="images/andsatanlaughedwhilegodloved.JPG" alt="And Satan Laughed! While God Loved!" class="w-full h-auto">
+    </div>
   </header>
 
-  <main>
-    <section class="message">
-      <h2>Our Message</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam
-        varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus
-        magna felis sollicitudin mauris.
-      </p>
+  <!-- Main content -->
+  <main class="max-w-3xl mx-auto px-6 py-16 sm:py-24">
+
+    <!-- Message -->
+    <section class="mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px flex-1 bg-brand-red/30"></div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-medium text-brand-red tracking-wide">Our Mission</h2>
+        <div class="h-px flex-1 bg-brand-red/30"></div>
+      </div>
+
+      <blockquote class="font-serif text-2xl sm:text-3xl leading-relaxed text-neutral-800 text-center italic px-4 sm:px-8">
+        <span class="text-brand-red font-semibold not-italic">&ldquo;. . . And Satan Laughed!&rdquo;</span>
+        exists to inspire Christ followers who have been marginalized or
+        disqualified to share their
+        <span class="text-brand-red font-semibold">HIStory</span>
+        and impact their world.
+      </blockquote>
     </section>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <dl>
-        <dt>Email</dt>
-        <dd><a href="mailto:info@andsatanlaughed.com">info@andsatanlaughed.com</a></dd>
+    <!-- Contact -->
+    <section>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px flex-1 bg-brand-red/30"></div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-medium text-brand-red tracking-wide">Contact</h2>
+        <div class="h-px flex-1 bg-brand-red/30"></div>
+      </div>
 
-        <dt>Phone</dt>
-        <dd><a href="tel:+10000000000">(000) 000-0000</a></dd>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <a href="mailto:info@andsatanlaughed.com" class="group bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-red hover:shadow-md transition">
+          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Email</div>
+          <div class="font-serif text-lg text-brand-dark group-hover:text-brand-red break-words">info@andsatanlaughed.com</div>
+        </a>
 
-        <dt>Address</dt>
-        <dd>Your address here</dd>
-      </dl>
+        <a href="tel:+10000000000" class="group bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-red hover:shadow-md transition">
+          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Phone</div>
+          <div class="font-serif text-lg text-brand-dark group-hover:text-brand-red">(000) 000-0000</div>
+        </a>
+
+        <div class="bg-white p-6 rounded-lg border border-neutral-200">
+          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Address</div>
+          <div class="font-serif text-lg text-brand-dark">Your address here</div>
+        </div>
+      </div>
     </section>
+
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> andsatanlaughed.com</p>
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200 bg-white py-6 px-6">
+    <div class="max-w-3xl mx-auto text-center text-sm text-neutral-500">
+      &copy; <span id="year"></span> andsatanlaughed.com
+    </div>
   </footer>
 
   <script>
