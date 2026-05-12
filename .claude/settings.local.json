@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import html.parser; p = html.parser.HTMLParser\\(\\); p.feed\\(open\\('index.html'\\).read\\(\\)\\); print\\('HTML parses cleanly'\\)\")"
+    ]
+  }
+}
