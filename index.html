@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="And Satan Laughed! While God Loved!">
-  <title>...And Satan Laughed! While God Loved!</title>
+  <meta name="description" content="...And Satan Laughed! — A platform for men who refuse to let their worst moments write their final chapter.">
+  <title>. . . And Satan Laughed!</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -19,8 +19,11 @@
           },
           colors: {
             brand: {
-              red: '#a8161b',
-              dark: '#1a1a1a',
+              red: '#ED1C24',
+              'red-deep': '#B5151B',
+              gold: '#D4B829',
+              'gold-light': '#E8D86A',
+              black: '#000000',
               cream: '#faf7f2',
             }
           }
@@ -28,78 +31,347 @@
       }
     }
   </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-divider {
+      height: 2px;
+      background: linear-gradient(to right, transparent, #D4B829, transparent);
+    }
+    .gold-border-t { border-top: 1px solid #D4B829; }
+    .gold-border-b { border-bottom: 1px solid #D4B829; }
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: #D4B829;
+      transition: all 0.25s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after { width: 100%; }
+  </style>
 </head>
-<body class="font-sans bg-brand-cream text-brand-dark antialiased">
+<body class="font-sans bg-brand-cream text-brand-black antialiased">
 
-  <!-- DRB corner logo -->
-  <a href="#" class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 block w-14 h-14 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-white shadow-lg hover:scale-105 transition-transform" aria-label="DRB">
-    <img src="images/drb.JPG" alt="DRB" class="w-full h-full object-cover">
-  </a>
+  <!-- Top Navigation -->
+  <nav class="sticky top-0 z-50 bg-white text-brand-black shadow-md gold-border-b">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="font-serif text-lg sm:text-xl text-brand-red tracking-wide whitespace-nowrap font-semibold">
+          . . . <span class="text-brand-black">And Satan Laughed!</span>
+        </a>
 
-  <!-- Banner -->
-  <header class="bg-white pt-16 pb-10 sm:pt-12 sm:pb-14 px-6 border-b border-neutral-200">
-    <div class="max-w-4xl mx-auto">
-      <img src="images/andsatanlaughedwhilegodloved.JPG" alt="And Satan Laughed! While God Loved!" class="w-full h-auto">
+        <button id="menuBtn" class="md:hidden text-brand-red focus:outline-none" aria-label="Open menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <ul class="hidden md:flex items-center gap-7 text-sm uppercase tracking-widest font-medium">
+          <li><a href="#home" class="nav-link hover:text-brand-red">Home</a></li>
+          <li><a href="#about" class="nav-link hover:text-brand-red">About</a></li>
+          <li><a href="#books" class="nav-link hover:text-brand-red">Books</a></li>
+          <li><a href="#growth" class="nav-link hover:text-brand-red">Growth Concept</a></li>
+          <li><a href="#speaking" class="nav-link hover:text-brand-red">Speaking</a></li>
+          <li><a href="#contact" class="nav-link hover:text-brand-red">Contact</a></li>
+        </ul>
+      </div>
+
+      <ul id="mobileMenu" class="hidden md:hidden pb-4 space-y-3 text-sm uppercase tracking-widest font-medium">
+        <li><a href="#home" class="block py-1 hover:text-brand-red">Home</a></li>
+        <li><a href="#about" class="block py-1 hover:text-brand-red">About</a></li>
+        <li><a href="#books" class="block py-1 hover:text-brand-red">Books</a></li>
+        <li><a href="#growth" class="block py-1 hover:text-brand-red">Growth Concept</a></li>
+        <li><a href="#speaking" class="block py-1 hover:text-brand-red">Speaking</a></li>
+        <li><a href="#contact" class="block py-1 hover:text-brand-red">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <!-- Main content -->
-  <main class="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-
-    <!-- Message -->
-    <section class="mb-20">
-      <div class="flex items-center gap-4 mb-8">
-        <div class="h-px flex-1 bg-brand-red/30"></div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-medium text-brand-red tracking-wide">Our Mission</h2>
-        <div class="h-px flex-1 bg-brand-red/30"></div>
+  <!-- HOME -->
+  <section id="home" class="relative bg-white overflow-hidden">
+    <div class="relative max-w-4xl mx-auto px-6 py-16 sm:py-20 text-center">
+      <div class="mb-10 flex justify-center">
+        <img src="images/andsatanlaughedwhilegodloved.JPG" alt=". . . And Satan Laughed! — While God Loved!" class="w-full max-w-2xl h-auto">
       </div>
 
-      <blockquote class="font-serif text-2xl sm:text-3xl leading-relaxed text-neutral-800 text-center italic px-4 sm:px-8">
-        <span class="text-brand-red font-semibold not-italic">&ldquo;. . . And Satan Laughed!&rdquo;</span>
-        exists to inspire Christ followers who have been marginalized or
-        disqualified to share their
-        <span class="text-brand-red font-semibold">HIStory</span>
-        and impact their world.
-      </blockquote>
-    </section>
+      <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold leading-tight tracking-tight text-brand-black">
+        <span class="text-brand-red">. . .</span> And Satan <span class="italic text-brand-red">Laughed!</span>
+      </h1>
 
-    <!-- Contact -->
-    <section>
-      <div class="flex items-center gap-4 mb-8">
-        <div class="h-px flex-1 bg-brand-red/30"></div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-medium text-brand-red tracking-wide">Contact</h2>
-        <div class="h-px flex-1 bg-brand-red/30"></div>
+      <div class="my-8 flex items-center justify-center gap-4">
+        <div class="h-px w-16 sm:w-24 bg-brand-gold"></div>
+        <span class="text-brand-gold text-xl">&#10070;</span>
+        <div class="h-px w-16 sm:w-24 bg-brand-gold"></div>
       </div>
 
-      <div class="grid sm:grid-cols-4 gap-6">
-        <a href="mailto:DRB@andsatanlaughed.com" class="group bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-red hover:shadow-md transition sm:col-span-2">
-          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Email</div>
-          <div class="font-serif text-lg text-brand-dark group-hover:text-brand-red whitespace-nowrap">DRB@andsatanlaughed.com</div>
-        </a>
+      <p class="font-serif text-xl sm:text-2xl md:text-3xl text-brand-black/80 italic max-w-3xl mx-auto leading-snug">
+        A platform for men who refuse to let their worst moments write their final chapter.
+      </p>
 
-        <a href="tel:+16787489116" class="group bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-red hover:shadow-md transition">
-          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Phone</div>
-          <div class="font-serif text-lg text-brand-dark group-hover:text-brand-red">(678) 748-9116</div>
-        </a>
+      <div class="mt-14 max-w-2xl mx-auto text-left sm:text-center font-sans text-base sm:text-lg leading-relaxed text-brand-black/85 space-y-4">
+        <p>There is a moment in every man&rsquo;s life when he hits a wall.</p>
+        <p>A failure he can&rsquo;t explain away.</p>
+        <p>A shame he can&rsquo;t outrun.</p>
+        <p>A dream he has quietly stopped believing in.</p>
+        <p>And somewhere in that moment &mdash;</p>
+        <p class="text-brand-red font-serif italic text-2xl sm:text-3xl">Satan laughed.</p>
+      </div>
 
-        <div class="bg-white p-6 rounded-lg border border-neutral-200">
-          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Address</div>
-          <div class="font-serif text-lg text-brand-dark">Jefferson, GA</div>
+      <div class="my-12 gold-divider max-w-md mx-auto"></div>
+
+      <div class="max-w-2xl mx-auto font-sans text-base sm:text-lg leading-relaxed text-brand-black/85 space-y-5">
+        <p>This platform exists because that laugh is not the end of the story.</p>
+        <p>
+          <span class="text-brand-red font-semibold">. . . And Satan Laughed! LLC</span>
+          exists to inform, empower, and mobilize men who have been marginalized by events or circumstances in their past &mdash; to engage the culture, impact the world, and share their own
+          <span class="text-brand-red font-semibold">HIStory</span>.
+        </p>
+        <p class="pt-4">This is not a platform for perfect men.</p>
+        <p class="font-serif italic text-xl sm:text-2xl text-brand-red">It is a platform for real ones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-brand-cream py-20 sm:py-28 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium text-brand-red tracking-wide text-center">About Dan</h2>
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+      </div>
+
+      <div class="md:flex md:gap-10 items-start">
+        <div class="flex-shrink-0 mb-8 md:mb-0 flex justify-center">
+          <div class="w-44 h-44 sm:w-56 sm:h-56 rounded-full overflow-hidden ring-4 ring-brand-gold shadow-xl">
+            <img src="images/drb.JPG" alt="Dan Barton — Dr. NAD — Gramps" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="font-sans text-base sm:text-lg leading-relaxed text-brand-black/90 space-y-5">
+          <p>
+            Dan &mdash; known to his grandchildren as <span class="font-semibold text-brand-red">Gramps</span> and to his readers as <span class="font-semibold text-brand-red">Dr. NAD</span> &mdash; is a retired Pastor, Hospital Chaplain, and Hospice Chaplain with more than four decades of ministry across six states.
+          </p>
+          <p>
+            Before any of that, he drove a forklift in a 100&deg; diecast shop wearing a hardhat with no air-conditioning &mdash; which is where he learned that the common man carries uncommon weight.
+          </p>
+          <p>
+            A student of life more than academia, Dan has pursued formal education across seven colleges and universities while earning his real degree on factory floors, in hospital corridors, and at bedsides where time had run out.
+          </p>
+          <p>
+            He shares a daily Growth Concept across fifteen social media platforms and writes with a voice he calls <span class="font-semibold text-brand-gold">GUS &mdash; Gramps&rsquo; Unique Style</span> &mdash; built for the man who hasn&rsquo;t willingly read a book since high school.
+          </p>
+          <p>
+            He and his wife Kathy have been married since 1979. They have two adult children, six grandchildren, and two children in heaven.
+          </p>
+          <div class="pt-4 font-serif italic text-lg sm:text-xl text-brand-black/80 border-l-2 border-brand-gold pl-5 space-y-1">
+            <p>He is a fellow traveler &mdash;</p>
+            <p>beaten up by the road,</p>
+            <p>still walking,</p>
+            <p>and absolutely convinced that God has not finished with any of us yet.</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- BOOKS -->
+  <section id="books" class="bg-white py-20 sm:py-28 px-6 border-y border-brand-gold/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-14">
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium text-brand-red tracking-wide text-center">The Books</h2>
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+      </div>
 
-  <!-- Footer -->
-  <footer class="border-t border-neutral-200 bg-white py-6 px-6">
-    <div class="max-w-3xl mx-auto text-center text-sm text-neutral-500">
-      &copy; <span id="year"></span> andsatanlaughed.com
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Book 1 -->
+        <article class="bg-brand-cream border-2 border-brand-gold/50 rounded-lg p-8 shadow-md hover:border-brand-red hover:shadow-lg transition">
+          <div class="text-xs uppercase tracking-[0.25em] text-brand-gold mb-3">Book One</div>
+          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-red mb-5 leading-tight">
+            GOD&rsquo;S GOT YOUR BACK
+          </h3>
+          <div class="gold-divider mb-6"></div>
+          <div class="space-y-4 text-base leading-relaxed text-brand-black/85">
+            <p>A collection of nearly 100 Growth Concepts paired with scripture from four Bible translations. Twelve chapters. Twelve life questions. One poem woven all the way through.</p>
+            <p>Written for the man who has something inside him desperate to come out &mdash; but who has convinced himself he is not the one to step up.</p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-brand-gold/40">
+            <div class="font-serif italic text-brand-red text-lg mb-3">Coming soon.</div>
+            <p class="text-sm text-brand-black/70 mb-3">To be notified the moment it launches &mdash;</p>
+            <a href="mailto:DRB@andsatanlaughed.com" class="inline-block text-brand-red hover:text-brand-red-deep font-semibold tracking-wide transition">
+              DRB@andsatanlaughed.com &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Book 2 -->
+        <article class="bg-brand-cream border-2 border-brand-gold/50 rounded-lg p-8 shadow-md hover:border-brand-red hover:shadow-lg transition">
+          <div class="text-xs uppercase tracking-[0.25em] text-brand-gold mb-3">Book Two</div>
+          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-red mb-5 leading-tight">
+            GOD REPURPOSES SKELETONS!
+          </h3>
+          <div class="gold-divider mb-6"></div>
+          <div class="space-y-4 text-base leading-relaxed text-brand-black/85">
+            <p>Every man has a closet.</p>
+            <p>This book opens it &mdash; not to expose you, but to show you what God can build from what you thought was only wreckage.</p>
+            <p>A roadmap for acknowledging failure and rising above it.</p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-brand-gold/40">
+            <div class="font-serif italic text-brand-red text-lg">Currently in development.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWTH CONCEPT -->
+  <section id="growth" class="bg-brand-cream py-20 sm:py-28 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium text-brand-red tracking-wide text-center">Growth Concept of the Day</h2>
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+      </div>
+
+      <div class="bg-white border-2 border-brand-gold/70 rounded-lg shadow-lg p-8 sm:p-12">
+        <div class="space-y-6 font-sans text-lg sm:text-xl leading-relaxed text-brand-black">
+          <div>
+            <p>You say: <span class="font-serif italic text-brand-black">&ldquo;I can&rsquo;t, because I did&hellip;&rdquo;</span></p>
+            <p class="text-sm uppercase tracking-widest text-brand-red mt-1 ml-4">&mdash; Your Performance</p>
+          </div>
+          <div>
+            <p>Satan says: <span class="font-serif italic text-brand-black">&ldquo;You can&rsquo;t, because you are&hellip;&rdquo;</span></p>
+            <p class="text-sm uppercase tracking-widest text-brand-red mt-1 ml-4">&mdash; Your Picture</p>
+          </div>
+          <div>
+            <p>God says: <span class="font-serif italic text-brand-red font-semibold">&ldquo;You can, because I AM.&rdquo;</span></p>
+            <p class="text-sm uppercase tracking-widest text-brand-gold mt-1 ml-4">&mdash; Your Position</p>
+          </div>
+        </div>
+
+        <div class="my-10 gold-divider"></div>
+
+        <div class="text-center space-y-4">
+          <p class="font-sans text-base sm:text-lg text-brand-black/70">Life&rsquo;s biggest question:</p>
+          <p class="font-serif text-2xl sm:text-3xl font-bold text-brand-red tracking-wide">
+            WHO ARE YOU GOING TO BELIEVE?
+          </p>
+          <p class="font-serif italic text-lg sm:text-xl text-brand-black/80 pt-2">
+            Refuse to let a failure define your future.
+          </p>
+          <p class="text-sm uppercase tracking-[0.25em] text-brand-gold pt-3">
+            &mdash; Dr. NAD / Gramps
+          </p>
+        </div>
+      </div>
+
+      <p class="text-center mt-8 text-brand-black/80 font-sans italic">
+        Follow along daily on <span class="text-brand-red font-semibold not-italic">[social media handles to be added]</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section id="speaking" class="bg-white py-20 sm:py-28 px-6 border-y border-brand-gold/30">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium text-brand-red tracking-wide text-center">Let&rsquo;s Connect</h2>
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+      </div>
+
+      <p class="text-center text-lg sm:text-xl text-brand-black/80 mb-8">Dan is available for &mdash;</p>
+
+      <ul class="max-w-md mx-auto space-y-3 mb-12 font-serif text-xl sm:text-2xl text-brand-black">
+        <li class="flex items-start gap-3"><span class="text-brand-gold mt-1">&#10070;</span><span>Speaking engagements</span></li>
+        <li class="flex items-start gap-3"><span class="text-brand-gold mt-1">&#10070;</span><span>Men&rsquo;s events and retreats</span></li>
+        <li class="flex items-start gap-3"><span class="text-brand-gold mt-1">&#10070;</span><span>One on one coaching</span></li>
+        <li class="flex items-start gap-3"><span class="text-brand-gold mt-1">&#10070;</span><span>Podcast conversations</span></li>
+        <li class="flex items-start gap-3"><span class="text-brand-gold mt-1">&#10070;</span><span>And whatever God opens up next</span></li>
+      </ul>
+
+      <div class="gold-divider max-w-md mx-auto mb-10"></div>
+
+      <div class="text-center space-y-4 font-sans text-lg sm:text-xl text-brand-black/80 italic">
+        <p>If something on this site stirred something in you &mdash;</p>
+        <p class="text-brand-red font-semibold not-italic">that is probably not a coincidence.</p>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="#contact" class="inline-block bg-brand-red hover:bg-brand-red-deep text-white font-semibold tracking-widest uppercase text-sm px-8 py-4 rounded transition shadow-md">
+          Reach Out &mdash; The Conversation Is Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-brand-cream py-20 sm:py-28 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium text-brand-red tracking-wide text-center">Reach Dan Directly</h2>
+        <div class="h-px flex-1 bg-brand-gold/60"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5 mb-10">
+        <a href="mailto:drb@andsatanlaughed.com" class="group bg-white p-6 rounded-lg border border-brand-gold/50 hover:border-brand-red hover:shadow-md transition text-center sm:col-span-3">
+          <div class="text-xs uppercase tracking-[0.25em] text-brand-gold mb-2">Email</div>
+          <div class="font-serif text-xl sm:text-2xl text-brand-black group-hover:text-brand-red break-words">drb@andsatanlaughed.com</div>
+        </a>
+
+        <a href="tel:+16787489116" class="group bg-white p-6 rounded-lg border border-brand-gold/50 hover:border-brand-red hover:shadow-md transition text-center">
+          <div class="text-xs uppercase tracking-[0.25em] text-brand-gold mb-2">Phone</div>
+          <div class="font-serif text-lg text-brand-black group-hover:text-brand-red">(678) 748-9116</div>
+        </a>
+
+        <div class="bg-white p-6 rounded-lg border border-brand-gold/50 text-center sm:col-span-2">
+          <div class="text-xs uppercase tracking-[0.25em] text-brand-gold mb-2">Location</div>
+          <div class="font-serif text-lg text-brand-black">[city, state]</div>
+        </div>
+      </div>
+
+      <p class="text-center font-serif italic text-lg sm:text-xl text-brand-black/80">
+        Dan reads every message personally. He is a real person, not a marketing team.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-black text-brand-cream py-12 px-6 gold-border-t">
+    <div class="max-w-3xl mx-auto text-center space-y-4">
+      <p class="font-serif text-2xl sm:text-3xl text-brand-gold">. . . And Satan Laughed! LLC</p>
+      <p class="font-sans italic text-brand-cream/80 max-w-xl mx-auto">
+        Facilitating Transformational Defining God Moments for men who refuse to quit.
+      </p>
+
+      <div class="gold-divider max-w-xs mx-auto my-4"></div>
+
+      <p class="text-sm text-brand-cream/70">
+        &copy; <span id="year"></span> Dan Barton &mdash; Dr. NAD &mdash; Gramps
+      </p>
+
+      <div class="pt-2 text-xs text-brand-cream/50 italic">
+        <!-- [Social media icons to be added] -->
+      </div>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
   </script>
 </body>
 </html>
